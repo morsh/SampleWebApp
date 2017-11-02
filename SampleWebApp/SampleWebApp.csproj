@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -155,6 +156,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\Book.cs" />
+    <Compile Include="Common\Logger.cs" />
     <Compile Include="Common\RequreSecureConnectionFilter.cs" />
     <Compile Include="Common\SomeAPI.cs" />
     <Compile Include="Controllers\HomeController.cs" />

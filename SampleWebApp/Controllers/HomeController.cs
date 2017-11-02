@@ -20,6 +20,15 @@ namespace SampleWebApp.Controllers
                 files = Directory.EnumerateFiles(LOCAL_FILES);
             }
 
+            if (files == null || files.Count() == 0)
+            {
+                Logger.Log("Index - No files found");
+            }
+            else
+            {
+                Logger.Log("Index - " + files.Count() + " files found");
+            }
+
             ViewBag.Files = files;
 
             return View();
@@ -29,6 +38,7 @@ namespace SampleWebApp.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            Logger.Log("About Landing");
             
             return View();
         }
@@ -37,8 +47,18 @@ namespace SampleWebApp.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            ViewBag.Books = SomeAPI.GetList();
+            var books = SomeAPI.GetList();
 
+            if (books == null || books.Count() == 0)
+            {
+                Logger.Log("Contact - No books found");
+            }
+            else
+            {
+                Logger.Log("Contact - " + books.Count() + " books found");
+            }
+
+            ViewBag.Books = books;
             return View();
         }
     }
