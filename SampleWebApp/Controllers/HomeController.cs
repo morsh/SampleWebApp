@@ -14,7 +14,7 @@ namespace SampleWebApp.Controllers
 
         public ActionResult Index()
         {
-            var files =  new string[0] as IEnumerable<string>;
+            var files = new string[0] as IEnumerable<string>;
             if (Directory.Exists(LOCAL_FILES))
             {
                 files = Directory.EnumerateFiles(LOCAL_FILES);
@@ -39,7 +39,7 @@ namespace SampleWebApp.Controllers
         {
             ViewBag.Message = "Your application description page.";
             Logger.Log("About Landing");
-            
+
             return View();
         }
 

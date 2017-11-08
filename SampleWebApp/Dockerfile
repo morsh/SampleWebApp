@@ -1,6 +1,6 @@
 ﻿# escape=` 
  
-FROM microsoft/aspnet
+FROM microsoft/aspnet:4.6.2
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 
 ADD enablessl.ps1 /windows/temp/enablessl.ps1
